@@ -22,15 +22,15 @@ template printMsg(kind: PathComponent, path, newPath: string, filter: bool) =
     if kind == pcFile: fgYellow
     else: fgBlue
   let kindStr =
-    if kind == pcFile: "[ File ]"
-    else: "[ Dir  ]"
+    if kind == pcFile: "file"
+    else: "dir "
 
   if path != newPath:
     inc(changeFileCount)
-    styledEcho fgBlack, kindCol, kindStr, resetStyle, " ", path, " -> ", fgGreen, newPath, resetStyle
+    styledEcho fgBlack, kindCol, kindStr, resetStyle, " x ", path, " -> ", fgGreen, newPath, resetStyle
   else:
     if not filter:
-      styledEcho fgBlack, kindCol, kindStr, resetStyle, " ", "NO CHANGE ", path
+      styledEcho fgBlack, kindCol, kindStr, resetStyle, " - ", path
 
 proc runMoveFile(kind: PathComponent, path, newPath: string,
                  dryRun, printRename, filter: bool) =
