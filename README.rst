@@ -17,7 +17,7 @@ Overview
 I hate a file name that has whitespace.
 Sometimes, it occurs a bug of program (Especially, shell script).
 Renaming is boring and takes times.
-So I created `rena` command. This will resolve this problem.
+So I created ``rena`` command. This will resolve this problem.
 
 Development
 ===========
@@ -27,15 +27,15 @@ Nim 1.0.6
 Usage
 =====
 
-You can do `dry-run` with `-d` or `--dry-run`.
+You can do ``dry-run`` with ``-d`` or ``--dry-run``.
 It means that you can check file name before real renaming with your eyes.
-Files or directories will be renamed if you didn't use `-d` options.
+Files or directories will be renamed if you didn't use ``-d`` options.
 
 replace
 -------
 
-`replace` sub-command runs replacing characters, `--from-str` to `--to-str`.
-`replace` replaces whitespace in default.
+``replace`` sub-command runs replacing characters, ``--from-str`` to ``--to-str``.
+``replace`` replaces whitespace in default.
 
 This code runs dry-run.
 
@@ -57,9 +57,9 @@ This code actually runs renaming.
 
    $ rena replace -p -t _ target_dir
 
-You should use the `--from-strs` or `-f` options if you want to replace multiple characters.
+You should use the ``--from-strs`` or ``-f`` options if you want to replace multiple characters.
 
-Examples: Replacing `(` and `)` to `_` .
+Examples: Replacing ``(`` and ``)`` to ``_`` .
 
 .. code-block:: shell
 
@@ -68,14 +68,14 @@ Examples: Replacing `(` and `)` to `_` .
 delete
 ------
 
-You should use the `delete` sub-command if you want to delete characters.
-`delete` deletes whitespace in default.
+You should use the ``delete`` sub-command if you want to delete characters.
+``delete`` deletes whitespace in default.
 
 .. code-block:: shell
 
    $ rena delete target_dir
 
-You should use `-f` options if you change delete target characters.
+You should use ``-f`` options if you change delete target characters.
 
 .. code-block:: shell
 
@@ -84,7 +84,7 @@ You should use `-f` options if you change delete target characters.
 lower
 -----
 
-`lower` sub-command renames *all* characters to lower character.
+``lower`` sub-command renames *all* characters to lower character.
 
 .. code-block:: shell
 
@@ -93,7 +93,7 @@ lower
 upper
 -----
 
-`upper` sub-command renames *all* characters to upper character.
+``upper`` sub-command renames *all* characters to upper character.
 
 .. code-block:: shell
 
