@@ -1,8 +1,8 @@
-=========
+====
 rena
-=========
+====
 
-|gh-actions|
+|gh-actions| |nimble-version| |nimble-install|
 
 rena is a tiny fire/directory renaming command.
 
@@ -10,6 +10,14 @@ rena is a tiny fire/directory renaming command.
 
 .. contents:: Table of contents
    :depth: 3
+
+Overview
+========
+
+I hate a file name that has whitespace.
+Sometimes, it occurs a bug of program (Especially, shell script).
+Renaming is boring and takes times.
+So I created `rena` command. This will resolve this problem.
 
 Development
 ===========
@@ -19,25 +27,76 @@ Nim 1.0.6
 Usage
 =====
 
-You can try `dry-run`.
+You can do `dry-run` with `-d` or `--dry-run`.
+It means that you can check file name before real renaming with your eyes.
+Files or directories will be renamed if you didn't use `-d` options.
+
+replace
+-------
+
+`replace` sub-command runs replacing characters, `--from-str` to `--to-str`.
+`replace` replaces whitespace in default.
+
+This code runs dry-run.
 
 .. code-block:: shell
 
-   # Dry run is `--dry-run` or `-d`
    $ rena replace --dry-run -t _ target_dir
+
+   # or
+
    $ rena replace -d -t _ target_dir
-   # You can set multiple `--from-strs` or `-f`
-   $ rena replace -f a -f b -f c -t "_" target_dir
 
-   # Delete whitespace
+This code actually runs renaming.
+
+.. code-block:: shell
+
+   $ rena replace -t _ target_dir
+
+   # '-p' prints results
+
+   $ rena replace -p -t _ target_dir
+
+You should use the `--from-strs` or `-f` options if you want to replace multiple characters.
+
+Examples: Replacing `(` and `)` to `_` .
+
+.. code-block:: shell
+
+   $ rena replace -f '(' -f ')' -t "_" target_dir
+
+delete
+------
+
+You should use the `delete` sub-command if you want to delete characters.
+`delete` deletes whitespace in default.
+
+.. code-block:: shell
+
    $ rena delete target_dir
-   # Print remaming
-   $ rena delete -p target_dir
 
-   # To lower
+You should use `-f` options if you change delete target characters.
+
+.. code-block:: shell
+
+   $ rena delete -f '(' -f ')' target_dir
+
+lower
+-----
+
+`lower` sub-command renames *all* characters to lower character.
+
+.. code-block:: shell
+
    $ rena lower target_dir
 
-   # To upper
+upper
+-----
+
+`upper` sub-command renames *all* characters to upper character.
+
+.. code-block:: shell
+
    $ rena upper target_dir
 
 Install
@@ -60,7 +119,5 @@ MIT
    :target: https://nimble.directory/ci/badges/rena/nimdevel/output.html
 .. |nimble-install| image:: https://nimble.directory/ci/badges/rena/nimdevel/status.svg
    :target: https://nimble.directory/ci/badges/rena/nimdevel/output.html
-.. |nimble-docs| image:: https://nimble.directory/ci/badges/rena/nimdevel/docstatus.svg
-   :target: https://nimble.directory/ci/badges/rena/nimdevel/doc_build_output.html
 
 .. |demo-replace| image:: ./docs/demo_replace.gif
