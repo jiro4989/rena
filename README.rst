@@ -6,6 +6,8 @@ rena
 
 rena is a tiny fire/directory renaming command.
 
+|demo-replace|
+
 .. contents:: Table of contents
    :depth: 3
 
@@ -61,3 +63,4 @@ MIT
 .. |nimble-docs| image:: https://nimble.directory/ci/badges/rena/nimdevel/docstatus.svg
    :target: https://nimble.directory/ci/badges/rena/nimdevel/doc_build_output.html
 
+.. |demo-replace| image:: ./docs/demo_replace.gif
