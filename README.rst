@@ -45,7 +45,7 @@ Install
 
 .. code-block:: shell
 
-   nimble install https://github.com/jiro4989/rena
+   nimble install rena
 
 Download binary from `Release <https://github.com/jiro4989/rena/releases>`_.
 
