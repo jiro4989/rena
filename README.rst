@@ -4,7 +4,7 @@ rena
 
 |gh-actions| |nimble-version| |nimble-install|
 
-rena is a tiny fire/directory renaming command.
+rena is a tiny file/directory renaming command.
 
 |demo-replace|
 
